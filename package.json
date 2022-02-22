@@ -11,19 +11,19 @@
     "url": "git+https://github.com/imbickydutta/file-system-backend.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "imbickydutta",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/imbickydutta/file-system-backend/issues"
   },
   "homepage": "https://github.com/imbickydutta/file-system-backend#readme",
   "dependencies": {
-    "aws-sdk": "^2.1079.0",
+    "aws-sdk": "^2.1077.0",
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.2.3",
+    "mongoose": "^6.2.2",
     "multer": "^1.4.4",
     "multer-s3": "^2.10.0"
   }
