@@ -31,6 +31,15 @@ Backend API for a file system like google drive / drop-box.
 - Query path example : root/folder1/childfolder1/grandchild1/
 - Use token as Bearer token
 
+### Post/Upload File
+
+- Method : POST
+- URL : https://drive-system.herokuapp.com/drive/uploadFile?path=< enter path here >/
+- Query path example : root/folder1/childfolder1/grandchild1/
+- Query path is the path where File will be uploaded
+- Req body : {"file_url": file.txt}
+- Use token as Bearer token
+
 ### Get Folder Details
 
 - Method : GET
