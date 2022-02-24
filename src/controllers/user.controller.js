@@ -60,6 +60,31 @@ router.post("/signup", async (req, res) => {
     }
 });
 
+router.post("/login", async (req, res) => {
+    try {
+        let user = await User.findOne({ email: req.body.email });
+
+        if (!user) {
+            return res.status(400).send({ message: "User does not exist" });
+        }
+
+        const isValid = await user.checkPassword(req.body.password);
+
+        if (!isValid) {
+            return res.status(400).send({ message: "Invalid email or password" });
+        }
+
+        const token = newToken(user);
+
+        user = await User.findOne({ email: req.body.email }).lean().exec();
+
+        return res.status(200).send({ user, token });
+
+    } catch (err) {
+        return res.status(500).send(err.message);
+    }
+});
+
 
 
 router.delete("/", authenticate, async (req, res) => {

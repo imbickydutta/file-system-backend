@@ -7,8 +7,6 @@ const s3 = new aws.S3({
     secretAccessKey: "lNy5CA9VQLyDKCqOAYLy6JmHAd5yoJPc4M41ygV0",
 })
 
-// const upload = multer({ storage: storage });
-
 module.exports = multer({
     storage: multerS3({
         s3: s3,
