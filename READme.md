@@ -27,21 +27,21 @@ Backend API for a file system like google drive / drop-box.
 ### Post/Create Folder
 
 - Method : POST
-- Route : https://drive-system.herokuapp.com/drive?path=<enter path here>/
+- Route : https://drive-system.herokuapp.com/drive?path=< enter path here >/
 - Query path example : root/folder1/childfolder1/grandchild1/
 - Use token as Bearer token
 
 ### Get Folder Details
 
 - Method : GET
-- Route : https://drive-system.herokuapp.com/drive?path=<enter path here>/
+- Route : https://drive-system.herokuapp.com/drive?path=< enter path here >/
 - Query path example : root/folder1/childfolder1/grandchild1/
 - Use token as Bearer token
 
 ### Delete Folder
 
 - Method : DELETE
-- Route : https://drive-system.herokuapp.com/drive/?path=<enter path here>/
+- Route : https://drive-system.herokuapp.com/drive/?path=< enter path here >/
 - Query path example : root/folder1/childfolder1/grandchild1/
 - Use token as Bearer token
 - Folder only gets deleted when it is empty
@@ -49,14 +49,14 @@ Backend API for a file system like google drive / drop-box.
 ### Delete File
 
 - Method : DELETE
-- Route : https://drive-system.herokuapp.com/drive/deleteFile?path=<enter path here>/
+- Route : https://drive-system.herokuapp.com/drive/deleteFile?path=< enter path here >/
 - Query path example : root/folder1/childfolder1/grandchild1/
 - Use token as Bearer token
 
 ### Move Folder
 
 - Method : PATCH
-- Route : https://drive-system.herokuapp.com/drive/move?path=<enter path here>/
+- Route : https://drive-system.herokuapp.com/drive/move?path=< enter path here >/
 - Query path example : root/folder1/childfolder1/grandchild1/
 - Query path is the path of the folder that we want to move
 - Req Body example : {"newParentPath": "root/folder2/childfolder1/"}
@@ -66,7 +66,7 @@ Backend API for a file system like google drive / drop-box.
 ### Move Folder
 
 - Method : PATCH
-- Route : https://drive-system.herokuapp.com/drive/moveFile?path=<enter path here>/
+- Route : https://drive-system.herokuapp.com/drive/moveFile?path=< enter path here >/
 - Query path example : root/folder1/childfolder1/grandchild1/fileName.txt
 - Query path is the path of the file that we want to move
 - Req Body example : {"newParentPath": "root/folder2/childfolder1/"}
@@ -77,7 +77,7 @@ Backend API for a file system like google drive / drop-box.
 
 - Work under progress (needs some rework)
 - Method : PATCH
-- Route : https://drive-system.herokuapp.com/drive/rename?path=<enter path here>/
+- Route : https://drive-system.herokuapp.com/drive/rename?path=< enter path here >/
 - Query path example : root/folder1/childfolder1/oldFolderName/
 - Query path is the path of the folder that we want to rename
 - Req Body example : {"newName": "newFolderName"}
@@ -88,7 +88,7 @@ Backend API for a file system like google drive / drop-box.
 
 - Work under progress (needs some rework)
 - Method : PATCH
-- Route : https://drive-system.herokuapp.com/drive/rename?path=<enter path here>/
+- Route : https://drive-system.herokuapp.com/drive/rename?path=< enter path here >/
 - Query path example : root/folder1/childfolder1/oldFileName.txt
 - Query path is the path of the folder that we want to rename
 - Req Body example : {"newFileName": "newFileName.txt"}
