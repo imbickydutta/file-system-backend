@@ -3,7 +3,7 @@ const express = require("express");
 const jwt = require("jsonwebtoken");
 const authenticate = require("../middlewares/authenticate");
 const User = require("../models/user.model");
-const Folder = require("../models/file.model");
+const Folder = require("../models/folder.model");
 
 
 
@@ -44,8 +44,8 @@ router.post("/signup", async (req, res) => {
         });
 
         const rootFolder = await Folder.create({
-            name: user.user_name,
-            path: "/",
+            folder_name: user.user_name,
+            path: "root/",
             user_id: user._id,
             parent_id: null,
         });
@@ -60,14 +60,7 @@ router.post("/signup", async (req, res) => {
     }
 });
 
-router.get("/root", authenticate, async (req, res) => {
-    try {
-        const root = await Folder.findOne({ user_id: req.user._id, parent_id: null }).lean().exec();
-        return res.status(200).send({ root });
-    } catch (err) {
-        return res.status(500).send(err.message);
-    }
-});
+
 
 router.delete("/", authenticate, async (req, res) => {
     try {
@@ -79,13 +72,5 @@ router.delete("/", authenticate, async (req, res) => {
     }
 });
 
-router.delete("/deleteAll", authenticate, async (req, res) => {
-    try {
-        const deleteAll = await User.deleteMany({});
-        return res.status(200).send(deleteAll);
-    } catch (err) {
-        return res.status(500).send(err.message);
-    }
-})
 
 module.exports = router;

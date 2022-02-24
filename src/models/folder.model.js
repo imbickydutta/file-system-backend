@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
-const fileSchema = new mongoose.Schema({
-    file_name: { type: String, required: true },
+const folderSchema = new mongoose.Schema({
+    folder_name: { type: String, required: true },
     path: { type: String, required: true },
     user_id: { type: mongoose.Schema.Types.ObjectId, ref: "user", required: true },
     parent_id: { type: mongoose.Schema.Types.ObjectId, ref: "folder" },
@@ -10,4 +10,4 @@ const fileSchema = new mongoose.Schema({
     timestamps: true
 });
 
-module.exports = mongoose.model("file", fileSchema);
+module.exports = mongoose.model("folder", folderSchema);
